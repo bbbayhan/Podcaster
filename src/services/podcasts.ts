@@ -1,6 +1,6 @@
 export interface Podcast {
-    title: string,
-    autor: string,
-    imageSource: string
-  }
-  
+  id: string;
+  title: string,
+  autor: string,
+  imageSource: string
+}
