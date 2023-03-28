@@ -1,19 +1,6 @@
-import { podcastsJson } from '../fixtures/podcasts'
+import { Podcast } from "../services/podcasts"
 
-interface Podcast {
-  title: string,
-  autor: string,
-  imageSource: string
-}
-
-export const Podcasts = (): JSX.Element => {
-  const podcasts = podcastsJson.feed.entry.map(podcast => ({
-    title: podcast["im:name"].label,
-    autor: podcast["im:artist"].label,
-    imageSource: podcast["im:image"][2].label,
-  }))
-
-
+export const ListOfPodcasts = ({ podcasts }: { podcasts: Podcast[] }): JSX.Element => {
   return (<div className="cards">
     {
       podcasts.map((podcast: Podcast) => (
@@ -24,4 +11,21 @@ export const Podcasts = (): JSX.Element => {
         </article>))
     }
   </div>)
+}
+
+function NoPodcastsError() {
+  return (
+    <p>There are no podcasts found.</p>
+  )
+}
+
+export const Podcasts = ({ podcasts }: { podcasts: Podcast[] }): JSX.Element => {
+
+  const hasPodcasts = podcasts?.length > 0
+
+  return (
+    hasPodcasts
+      ? <ListOfPodcasts podcasts={podcasts} />
+      : <NoPodcastsError />
+  )
 }
