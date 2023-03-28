@@ -2,20 +2,28 @@ import './App.css'
 import React from 'react'
 import { Podcasts } from './components/podcasts'
 import { usePodcasts } from './hooks/usePodcasts'
+import { useFilter } from './hooks/useFilter'
 
 export const App: React.FC = () => {
-  const {mappedPodcasts : podcasts} = usePodcasts()
- 
+  const {filter, setFilter} = useFilter()
+  const { mappedPodcasts: podcasts } = usePodcasts({filter})
+
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newFilter = event.target.value
+    setFilter(newFilter)
+  }
+
+
   return (
     <div className="App">
-        <header className="App-header">
-          <h3 className="App-title">Podcaster</h3>
-          <form className='form'>
-          <input className="App-filter" type=""name='query' placeholder="Filter podcasts..." /></form>
-        </header>
-        <main>
-            <Podcasts podcasts={podcasts}/>
-        </main>
+      <header className="App-header">
+        <h3 className="App-title">Podcaster</h3>
+        <input className="App-filter" onChange={handleChange} value={filter} placeholder="Filter podcasts..." />
+      </header>
+      <main>
+        <Podcasts podcasts={podcasts} />
+      </main>
 
     </div>
   )
