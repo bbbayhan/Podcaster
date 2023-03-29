@@ -7,6 +7,8 @@ export function usePodcastDetail() {
         title: episode.trackName,
         date: episode.releaseDate,
         duration: episode.trackTimeMillis,
+        description: episode.description,
+        audio: episode.episodeUrl
     }))
     return {
         episodeCount: podcastDetailJson.resultCount,
