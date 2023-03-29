@@ -6,11 +6,12 @@ import { useFilter } from './hooks/useFilter'
 
 export const App: React.FC = () => {
   const {filter, setFilter} = useFilter()
-  const { mappedPodcasts: podcasts } = usePodcasts({filter})
+  const { mappedPodcasts: podcasts, getPodcasts } = usePodcasts({filter})
 
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newFilter = event.target.value
+    getPodcasts();
     setFilter(newFilter)
   }
 
