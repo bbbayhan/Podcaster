@@ -27,7 +27,31 @@
 }
 
 .card {
-  display: grid;
-  grid-template-rows: max-content 200px 1fr;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.title{
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform:uppercase;
+}
+
+.autor{
+  margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+
+.podcastDetail{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  height: 75%;
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
 }
