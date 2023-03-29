@@ -9,6 +9,7 @@ export function usePodcasts({ filter }: { filter: string }) {
     title: podcast["im:name"].label,
     autor: podcast["im:artist"].label,
     imageSource: podcast["im:image"][2].label,
+    description: podcast.summary.label
   }))
   return { mappedPodcasts }
 }
