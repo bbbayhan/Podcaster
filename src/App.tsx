@@ -17,10 +17,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h3 className="App-title">Podcaster</h3>
-        <input className="App-filter" onChange={handleChange} value={filter} placeholder="Filter podcasts..." />
-      </header>
+      <input className="App-filter" onChange={handleChange} value={filter} placeholder="Filter podcasts..." />
       <main>
         <Podcasts podcasts={podcasts} />
       </main>
