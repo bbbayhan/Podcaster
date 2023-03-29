@@ -5,8 +5,8 @@ import { Podcast } from '../services/podcasts'
 
 describe('ListOfPodcasts', () => {
   const mockPodcasts: Podcast[] = [
-    { title: 'Podcast 1', autor: 'Author 1', imageSource: 'image1.jpg' },
-    { title: 'Podcast 2', autor: 'Author 2', imageSource: 'image2.jpg' },
+    { id: '1', title: 'Podcast 1', autor: 'Author 1', imageSource: 'image1.jpg', description: 'description 1'},
+    { id: '2' , title: 'Podcast 2', autor: 'Author 2', imageSource: 'image2.jpg', description: 'description 2'},
   ]
 
   it('renders the list of podcasts', () => {
