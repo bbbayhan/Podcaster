@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest';
+import { Podcast } from '../services/interfaces';
 import { Podcasts } from './podcasts'
-import { Podcast } from '../services/podcasts'
 
 describe('Podcasts', () => {
   const mockPodcasts: Podcast[] = [
