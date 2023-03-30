@@ -5,19 +5,19 @@ import { usePodcastDetail } from "../../hooks/usePodcastDetail";
 
 export const PodcastDetail = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(true);
-  const { podcastId= "" } = useParams<{ podcastId: string}>();
-  const { episodeCount, episodes } = usePodcastDetail({podcastId});
-  
+  const { podcastId = "" } = useParams<{ podcastId: string }>();
+  const { episodeCount, episodes } = usePodcastDetail({ podcastId });
+
   useEffect(() => {
     if (episodes.length > 0) setIsLoading(false)
   }, [episodes]);
 
   return (
     <>
-      <div>
       {isLoading && <div className="lds-ripple"><div></div><div></div></div>}
-        <h3>Episodes: {episodeCount}</h3>
-        <table style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)' }}>
+      <div style={{marginLeft: '16rem'}}>
+        <h2 style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)', textAlign: 'left', padding:'1rem' }}>Episodes: {episodeCount}</h2>
+        <table className="Episode-table">
           <thead>
             <tr>
               <th>Title</th>
@@ -27,13 +27,14 @@ export const PodcastDetail = (): JSX.Element => {
           </thead>
           <tbody>
             {episodes.map((episode) => <tr>
-              <NavLink to={`episode/${episode.id}`} state={{title:episode.title, description:episode.description, audio: episode.audio}}>{episode.title}</NavLink>
+              <NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink>
               <td>{episode.date}</td>
               <td>{episode.duration}</td>
             </tr>)}
           </tbody>
         </table>
       </div>
-      <Outlet /></>
+      <Outlet />
+    </>
   )
 }
