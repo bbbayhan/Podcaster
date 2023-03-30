@@ -1,9 +1,11 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useLocation } from "react-router-dom";
 import { usePodcastDetail } from "../hooks/usePodcastDetail";
 
 
 export const PodcastDetail = (): JSX.Element => {
-  const { episodeCount, episodes } = usePodcastDetail();
+  const {pathname} = useLocation();
+  const podcastId = pathname.substring(pathname.lastIndexOf('/') + 1);
+  const { episodeCount, episodes } = usePodcastDetail({podcastId});
 
   return (
     <>
@@ -19,7 +21,7 @@ export const PodcastDetail = (): JSX.Element => {
           </thead>
           <tbody>
             {episodes.map((episode) => <tr>
-              <NavLink to={`episode/${episode.id}`} state={{title:episode.title, description:episode.description, audio: episode.audio}}  >{episode.title}</NavLink>
+              <NavLink to={`episode/${episode.id}`} state={{title:episode.title, description:episode.description, audio: episode.audio}}>{episode.title}</NavLink>
               <td>{episode.date}</td>
               <td>{episode.duration}</td>
             </tr>)}

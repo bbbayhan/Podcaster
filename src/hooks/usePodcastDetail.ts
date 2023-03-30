@@ -1,17 +1,21 @@
-import { podcastDetailJson } from "../fixtures/podcastDetail"
+import { useEffect, useState } from "react"
+import { getPodcastDetailFromService } from "../services/podcastDetails"
 
-export function usePodcastDetail() {
+export function usePodcastDetail({ podcastId }: { podcastId: string }) {
+    const [episodes, setMappedEpisodes] = useState([])
+    const [episodeCount, setEpisodeCount] = useState(0)
 
-    const episodes = podcastDetailJson.results.map(episode => ({
-        id: episode.trackId,
-        title: episode.trackName,
-        date: episode.releaseDate,
-        duration: episode.trackTimeMillis,
-        description: episode.description,
-        audio: episode.episodeUrl
-    }))
+    useEffect(() => {
+        const getPodcastDetails = async () => {
+            const episodes = await getPodcastDetailFromService({ podcastId })
+            setEpisodeCount(episodes.resultCount)
+            setMappedEpisodes(episodes.mappedPodcastDetails)
+        }
+        getPodcastDetails();
+    }, [podcastId])
+
     return {
-        episodeCount: podcastDetailJson.resultCount,
+        episodeCount,
         episodes
     }
 }
