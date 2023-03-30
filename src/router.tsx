@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from './App';
-import { Episode } from './components/episode';
-import { PodcastDetail } from './components/podcastDetail';
-import { PodcastLayout } from './components/podcastLayout';
+import { Episode } from './components/Episode/episode';
+import { PodcastDetail } from './components/Podcast/podcastDetail';
+import { PodcastLayout } from './components/Podcast/podcastLayout';
 import { Layout } from './Layout';
 
 export const router = createBrowserRouter([
