@@ -1,4 +1,4 @@
-import { Podcast } from "../services/podcasts"
+import { Podcast } from "../services/interfaces"
 import { ListOfPodcasts } from "./listOfPodcasts"
 import { NoPodcastsError } from "./noPodcasts"
 

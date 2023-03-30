@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Podcast } from "../services/podcasts"
+import { Podcast } from "../services/interfaces";
 
 export const ListOfPodcasts = ({ podcasts }: { podcasts: Podcast[] }): JSX.Element => {
   const navigate = useNavigate();
