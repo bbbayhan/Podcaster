@@ -1,5 +1,5 @@
 import { Outlet, NavLink, useLocation } from "react-router-dom";
-import { usePodcastDetail } from "../hooks/usePodcastDetail";
+import { usePodcastDetail } from "../../hooks/usePodcastDetail";
 
 
 export const PodcastDetail = (): JSX.Element => {

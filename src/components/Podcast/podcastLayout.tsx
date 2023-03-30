@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { usePodcasts } from "../hooks/usePodcasts";
+import { usePodcasts } from "../../hooks/usePodcasts";
 
 export const PodcastLayout = () => {
   const navigate = useNavigate();
