@@ -4,7 +4,7 @@ export const getPodcastsFromService = async ({ filter }: { filter: string }) => 
   const podcastFromLocalStorageString = localStorage.getItem('podcasts');
   const podcastFromLocalStorage = podcastFromLocalStorageString ? JSON.parse(podcastFromLocalStorageString) : null;
 
-  if (podcastFromLocalStorage && (new Date() - new Date(podcastFromLocalStorage.date)) < oneDayInMilliseconds) {
+  if (podcastFromLocalStorage && (new Date().getTime() - new Date(podcastFromLocalStorage.date).getTime()) < oneDayInMilliseconds) {
     console.log('Obteniendo detalle del podcast desde localStorage');
     return podcastFromLocalStorage.data.filter((podcast: any) => podcast.title.toLowerCase().includes(filter.toLowerCase()) || podcast.autor.toLowerCase().includes(filter.toLowerCase()) || podcast.id.includes(filter));
   } else {
