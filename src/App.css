@@ -1,8 +1,30 @@
 #root {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.App{
+  display:flex;
+  flex-direction: column;
+}
+
+.Podcast-search{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-around;
+  align-self: end; 
+  margin-bottom: 2rem;
+}
+
+.Counter{
+  width: 50px;
+  height: 20px;
+  background-color: #008ae6;
+  color: #fff;
+  border-radius: 20%;
+  vertical-align: middle;
 }
 
 .App-header{
@@ -17,14 +39,15 @@
 }
 
 .App-filter{
-  align-self: self-end;
-  width: 20%;
+  width: 100%;
+   margin-left: 0.5rem;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
+  align-items: start;
 }
 
 .card {
@@ -65,7 +88,9 @@
   position: relative;
   width: 20px;
   height: 20px;
+  align-self: end; 
 }
+
 .lds-ripple div {
   position: absolute;
   border: 4px solid #fff;
@@ -74,6 +99,7 @@
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   background-color: #008ae6;
 }
+
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
