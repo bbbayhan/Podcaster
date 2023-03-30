@@ -5,7 +5,7 @@ import { PodcastLayout } from "./podcastLayout";
 const navigateMock = vi.fn();
 
 vi.mock('react-router-dom', () => ({
-    useLocation: vi.fn(() => ({ pathname: '/podcasts/123' })),
+  useParams: vi.fn(() => ({ podcastId: '123' })),
     useNavigate: vi.fn(() => navigateMock),
     Outlet: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   }));

@@ -3,7 +3,7 @@ import { PodcastDetail } from './podcastDetail';
 import { vi } from 'vitest';
 
 vi.mock('react-router-dom', () => ({
-  useLocation: vi.fn(() => ({ pathname: '/podcasts/1234' })),
+  useParams: vi.fn(() => ({ podcastId: '1234' })),
   NavLink: ({ children }: { children: React.ReactNode }) => <a>{children}</a>,
   Outlet: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));

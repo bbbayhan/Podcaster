@@ -1,10 +1,9 @@
-import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { usePodcasts } from "../../hooks/usePodcasts";
 
 export const PodcastLayout = () => {
   const navigate = useNavigate();
-  const {pathname} = useLocation();
-  const podcastId = pathname.substring(pathname.lastIndexOf('/') + 1);
+  const { podcastId= "" } = useParams<{ podcastId: string}>();
 
   const { mappedPodcasts: podcasts } = usePodcasts({filter:podcastId});
   const hasPodcasts = podcasts?.length > 0

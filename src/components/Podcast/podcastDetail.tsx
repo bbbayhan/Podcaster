@@ -1,10 +1,9 @@
-import { Outlet, NavLink, useLocation } from "react-router-dom";
+import { Outlet, NavLink, useParams } from "react-router-dom";
 import { usePodcastDetail } from "../../hooks/usePodcastDetail";
 
 
 export const PodcastDetail = (): JSX.Element => {
-  const {pathname} = useLocation();
-  const podcastId = pathname.substring(pathname.lastIndexOf('/') + 1);
+  const { podcastId= "" } = useParams<{ podcastId: string}>();
   const { episodeCount, episodes } = usePodcastDetail({podcastId});
 
   return (
