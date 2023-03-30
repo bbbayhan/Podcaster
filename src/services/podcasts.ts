@@ -6,10 +6,10 @@ export const getPodcastsFromService = async ({ filter }: { filter: string }) => 
 
   if (podcastFromLocalStorage && (new Date() - new Date(podcastFromLocalStorage.date)) < oneDayInMilliseconds) {
     console.log('Obteniendo detalle del podcast desde localStorage');
-    return podcastFromLocalStorage.data.filter((podcast: any) => podcast.title.toLowerCase().includes(filter.toLowerCase()) || podcast.autor.toLowerCase().includes(filter.toLowerCase()));
+    return podcastFromLocalStorage.data.filter((podcast: any) => podcast.title.toLowerCase().includes(filter.toLowerCase()) || podcast.autor.toLowerCase().includes(filter.toLowerCase()) || podcast.id.includes(filter));
   } else {
 
-    await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')}`)
+    return await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')}`)
       .then(response => {
         if (response.ok) {
           return response.json()
