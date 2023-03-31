@@ -77,11 +77,11 @@
 .podcastLayout{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
-  width: 300px;
+  width: 250px;
   min-height: fit-content;
   position: absolute;
   top: 8rem;
-  left: 4rem;
+  left: 12rem;
   word-wrap: break-word;
 }
 

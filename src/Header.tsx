@@ -5,7 +5,7 @@ export const Header = (): JSX.Element => {
   return (
     <header className="App-header" onClick={() => navigate('/', { replace: true })
     }>
-      <h3 className="App-title">Podcaster</h3>
+      <h2 className="App-title">Podcaster</h2>
     </header>
   )
 }
