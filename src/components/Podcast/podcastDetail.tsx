@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, NavLink, useParams } from "react-router-dom";
 import { usePodcastDetail } from "../../hooks/usePodcastDetail";
+import { LoadingAnimation } from "../../loadingAnimation";
 
 
 export const PodcastDetail = (): JSX.Element => {
@@ -14,8 +15,8 @@ export const PodcastDetail = (): JSX.Element => {
 
   return (
     <>
-      {isLoading && <div className="lds-ripple"><div></div><div></div></div>}
-      <div style={{marginLeft: '24rem', color: 'black'}}>
+      <Outlet />
+      <div style={{display: 'flex', flexDirection: 'column'}}>{isLoading && <LoadingAnimation/>}<div style={{marginTop: '1rem', marginLeft: '24rem', color: 'black'}}>
         <h2 style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)', textAlign: 'left', padding:'1rem' }}>Episodes: {episodeCount}</h2>
         <table className="Episode-table">
           <thead>
@@ -33,8 +34,7 @@ export const PodcastDetail = (): JSX.Element => {
             </tr>)}
           </tbody>
         </table>
-      </div>
-      <Outlet />
+      </div></div>
     </>
   )
 }

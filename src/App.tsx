@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Podcasts } from './components/podcasts'
 import { usePodcasts } from './hooks/usePodcasts'
 import { useFilter } from './hooks/useFilter'
+import { LoadingAnimation } from './loadingAnimation'
 
 export const App: React.FC = () => {
   const { filter, setFilter } = useFilter()
@@ -26,7 +27,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      {isLoading ? <><div className="lds-ripple"><div></div><div></div></div> <p>Loading podcasts...</p></> :
+      {isLoading ? <><LoadingAnimation/><p>Loading...</p></> :
       <><div className="Podcast-search">
       <span className="Counter">{counter}</span>
       <input className="App-filter" onChange={handleChange} value={filter} placeholder="Filter podcasts..." /></div>
