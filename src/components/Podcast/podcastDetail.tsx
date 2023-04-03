@@ -27,8 +27,8 @@ export const PodcastDetail = (): JSX.Element => {
             </tr>
           </thead>
           <tbody>
-            {episodes.map((episode) => <tr>
-              <NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink>
+            {episodes.map((episode) => <tr key={episode.id}>
+              <td><NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink></td>
               <td>{episode.date}</td>
               <td>{episode.duration}</td>
             </tr>)}
