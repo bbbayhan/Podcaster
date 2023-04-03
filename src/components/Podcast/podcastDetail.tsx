@@ -15,7 +15,7 @@ export const PodcastDetail = (): JSX.Element => {
   return (
     <>
       {isLoading && <div className="lds-ripple"><div></div><div></div></div>}
-      <div style={{marginLeft: '24rem'}}>
+      <div style={{marginLeft: '24rem', color: 'black'}}>
         <h2 style={{ boxShadow: '0 0 20px rgba(0, 0, 0, 0.2)', textAlign: 'left', padding:'1rem' }}>Episodes: {episodeCount}</h2>
         <table className="Episode-table">
           <thead>
