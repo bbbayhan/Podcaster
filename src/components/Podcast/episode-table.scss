@@ -1,0 +1,41 @@
+.episode-container {
+  display: flex;
+  flex-direction: column;
+
+  > div:first-child {
+    margin-top: 1rem;
+    margin-left: 24rem;
+    color: black;
+
+    h2 {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      padding: 1rem;
+    }
+  }
+}
+
+.episode-table{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
+    width: 100%;
+  
+    th, td {
+      padding: 8px;
+      text-align: left;
+      vertical-align: initial;
+    }
+  
+    thead{
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+  
+    tr:nth-child(odd) {
+      background-color: #f2f2f2;
+    }
+  
+    &:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+  }

@@ -1,0 +1,35 @@
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App{
+  display:flex;
+  flex-direction: column;
+
+  .podcast-search{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
+    align-self: end; 
+    margin-bottom: 2rem;
+  }
+  
+  .counter{
+    width: 50px;
+    height: 20px;
+    background-color: #008ae6;
+    color: #fff;
+    border-radius: 20%;
+    vertical-align: middle;
+  }
+  
+  .app-filter{
+    width: 100%;
+    margin-left: 0.5rem;
+    background-color: white;
+  }  
+}
+

@@ -1,0 +1,38 @@
+.podcast-layout {
+    color: black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 250px;
+    min-height: fit-content;
+    position: absolute;
+    top: 8rem;
+    left: 12rem;
+    word-wrap: break-word;
+    transition: background-color 0.3s ease;
+    
+    main {
+      h3 {
+        border-bottom: 1px solid #ccc;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+      }
+      
+      h4 {
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        padding-bottom: 1rem;
+      }
+      
+      p {
+        margin-top: 0;
+      }
+    }
+    
+    &:hover {
+      cursor: pointer;
+      background-color: #dddddd65;
+    }
+  }
+  

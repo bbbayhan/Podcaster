@@ -1,0 +1,19 @@
+.app-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    &:hover {
+      cursor: pointer;
+    }
+
+    .app-title {
+        text-align: left;
+        color: #008ae6;
+      
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+  }
+  

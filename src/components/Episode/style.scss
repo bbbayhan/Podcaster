@@ -1,0 +1,20 @@
+.episode{
+  margin-left: 24rem;
+  color: black;
+  article{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 600px;
+  }
+
+  main{
+    h2{
+      padding: 0.8rem;
+    }
+    p{
+      padding: 0.5rem;
+    }
+    audio{
+      padding: 0.5rem;
+    }
+  }
+}

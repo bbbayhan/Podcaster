@@ -3,7 +3,7 @@ import App from './App';
 import { Episode } from './components/Episode/episode';
 import { PodcastDetail } from './components/Podcast/podcastDetail';
 import { PodcastLayout } from './components/Podcast/podcastLayout';
-import { Layout } from './Layout';
+import { Layout } from './components/Layout/Layout';
 
 export const router = createBrowserRouter([
   {

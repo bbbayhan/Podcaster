@@ -1,0 +1,40 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: start;
+  
+    .card {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #dddddd65;
+      }
+  
+      header {
+        img {
+          border-radius: 50%;
+        }
+      }
+  
+      main {
+        .title {
+          color: black;
+          font-size: 1rem;
+          font-weight: 900;
+          text-align: center;
+          text-transform: uppercase;
+        }
+  
+        .autor {
+          margin-top: 0.5rem;
+          color: #666;
+          font-size: 0.9rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+  

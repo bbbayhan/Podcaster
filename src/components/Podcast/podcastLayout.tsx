@@ -1,5 +1,6 @@
 import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { usePodcasts } from "../../hooks/usePodcasts";
+import './podcast-layout.scss';
 
 export const PodcastLayout = () => {
   const navigate = useNavigate();
@@ -9,10 +10,10 @@ export const PodcastLayout = () => {
   const hasPodcasts = podcasts?.length > 0
     return (
     <>
-      {hasPodcasts && <><article className="podcastLayout" onClick={() => navigate(`../podcast/${podcastId}`)}>
+      {hasPodcasts && <><article className="podcast-layout" onClick={() => navigate(`../podcast/${podcastId}`)}>
         <header><img src={podcasts[0].imageSource} id={podcastId} alt="Hot air balloons" /></header>
-        <main><h3 style={{borderBottom: '1px solid #ccc'}}>{podcasts[0].title}</h3>
-          <h4 style={{borderBottom: '1px solid #ccc', paddingBottom: '1rem'}}>Autor: {podcasts[0].autor}</h4><p>Description: {podcasts[0].description}</p></main>
+        <main><h3>{podcasts[0].title}</h3>
+          <h4>Autor: {podcasts[0].autor}</h4><p>Description: {podcasts[0].description}</p></main>
       </article></>}
       <Outlet />
     </>);

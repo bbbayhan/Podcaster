@@ -1,5 +1,5 @@
 import { Podcast } from "../services/interfaces"
-import { ListOfPodcasts } from "./listOfPodcasts"
+import { ListOfPodcasts } from "./ListOfPodcasts/listOfPodcasts"
 import { NoPodcastsError } from "./noPodcasts"
 
 export const Podcasts = ({ podcasts }: { podcasts: Podcast[] }): JSX.Element => {
