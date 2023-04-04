@@ -34,5 +34,34 @@
       cursor: pointer;
       background-color: #dddddd65;
     }
+
+    @media screen and (max-width: 1245px) {
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      top:0;
+      .podcast-layout-image{
+        width: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .podcast-layout-content {
+        .podcast-layout-title {
+        font-size: 0.9rem;
+        margin-bottom: 0.2rem;
+        border-bottom: 1px solid #ccc;
+      }
+      
+      .podcast-layout-autor {
+        border-bottom: 1px solid #ccc;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      .podcast-layout-description {
+        display: none;
+      }
+    }}
   }
   

@@ -16,7 +16,7 @@ export const PodcastDetail = (): JSX.Element => {
   return (
     <>
       <Outlet />
-      <div className="episode-container">{isLoading && <LoadingAnimation/>}<div>
+      <div className="episode-container">{isLoading && <LoadingAnimation/>}<div className="episode-list-container">
         <h2 className="episode-count">Episodes: {episodeCount}</h2>
         <table className="episode-table">
           <thead className="episode-table-title">

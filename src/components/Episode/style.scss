@@ -2,8 +2,8 @@
   margin-left: 24rem;
   color: black;
   .episode-article{
+    padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 600px;
   }
 
   .episode-content{
@@ -14,7 +14,17 @@
       padding: 0.5rem;
     }
     .episode-audio{
-      padding: 0.5rem;
+      width: 100%;
     }
   }
+
+  @media screen and (max-width: 1245px) {
+    margin-left: 12rem;
+    margin-top: 2rem;
+    width: 50%;
+    .episode-content {
+      color: black;
+      font-size: 0.6rem;
+    }
+   }
 }

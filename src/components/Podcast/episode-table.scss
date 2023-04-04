@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  > div:first-child {
+  .episode-list-container {
     margin-top: 1rem;
     margin-left: 24rem;
     color: black;
@@ -13,6 +13,15 @@
       padding: 1rem;
     }
   }
+
+  @media screen and (max-width: 1245px) {
+    .episode-list-container {
+      width: 50%;
+      color: black;
+      font-size: 0.6rem;
+      margin-left: 9.5rem;
+    }
+   }
 }
 
 .episode-table{
