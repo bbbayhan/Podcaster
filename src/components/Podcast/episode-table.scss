@@ -7,7 +7,7 @@
     margin-left: 24rem;
     color: black;
 
-    h2 {
+    .episode-count{
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       text-align: left;
       padding: 1rem;
@@ -20,13 +20,13 @@
     border-collapse: collapse;
     width: 100%;
   
-    th, td {
+    .episode-table-column {
       padding: 8px;
       text-align: left;
       vertical-align: initial;
     }
   
-    thead{
+    .episode-table-title{
       background-color: #fff;
       border-bottom: 1px solid #ccc;
     }

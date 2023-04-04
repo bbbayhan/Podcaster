@@ -10,22 +10,22 @@
     word-wrap: break-word;
     transition: background-color 0.3s ease;
     
-    main {
-      h3 {
+    .podcast-layout-content {
+      .podcast-layout-title {
         border-bottom: 1px solid #ccc;
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
         margin-top: 0;
       }
       
-      h4 {
+      .podcast-layout-autor {
         border-bottom: 1px solid #ccc;
         margin-bottom: 1rem;
         margin-top: 0;
         padding-bottom: 1rem;
       }
       
-      p {
+      .podcast-layout-description {
         margin-top: 0;
       }
     }

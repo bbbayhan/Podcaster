@@ -1,19 +1,19 @@
 .episode{
   margin-left: 24rem;
   color: black;
-  article{
+  .episode-article{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     width: 600px;
   }
 
-  main{
-    h2{
+  .episode-content{
+    .episode-title{
       padding: 0.8rem;
     }
-    p{
+    .episode-description{
       padding: 0.5rem;
     }
-    audio{
+    .episode-audio{
       padding: 0.5rem;
     }
   }

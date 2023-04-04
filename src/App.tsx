@@ -31,7 +31,7 @@ export const App: React.FC = () => {
       <><div className="podcast-search">
       <span className="counter">{counter}</span>
       <input className="app-filter" onChange={handleChange} value={filter} placeholder="Filter podcasts..." /></div>
-      <main>
+      <main className="app-main">
         <Podcasts podcasts={podcasts} />
       </main></>}
 

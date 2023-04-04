@@ -1,5 +1,17 @@
 const oneDayInMilliseconds = 86400000;
 
+const formatStringToDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-GB");
+}
+
+const formatNumberToMinutes = (trackTimeMillis: number) => {
+    const trackTimeSeconds = Math.floor(trackTimeMillis / 1000);
+    const minutes = Math.floor(trackTimeSeconds / 60);
+    const seconds = trackTimeSeconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+
 export const getPodcastDetailFromService = async ({ podcastId }: { podcastId: string }) => {
     const podcastDetailLocalStorageString = localStorage.getItem(`podcast-${podcastId}`);
     const podcastDetailLocalStorage = podcastDetailLocalStorageString ? JSON.parse(podcastDetailLocalStorageString) : null;
@@ -17,11 +29,12 @@ export const getPodcastDetailFromService = async ({ podcastId }: { podcastId: st
             .then(data => {
                 const podcastDetails = JSON.parse(data.contents)
                 const resultCount = podcastDetails.resultCount
+
                 const mappedPodcastDetails = podcastDetails.results.map((episode: any) => ({
                     id: episode.trackId,
                     title: episode.trackName,
-                    date: episode.releaseDate,
-                    duration: episode.trackTimeMillis,
+                    date: formatStringToDate(episode.releaseDate),
+                    duration: formatNumberToMinutes(episode.trackTimeMillis),
                     description: episode.description,
                     audio: episode.episodeUrl
                 }))

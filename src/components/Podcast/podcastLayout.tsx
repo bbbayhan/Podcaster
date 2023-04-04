@@ -11,9 +11,9 @@ export const PodcastLayout = () => {
     return (
     <>
       {hasPodcasts && <><article className="podcast-layout" onClick={() => navigate(`../podcast/${podcastId}`)}>
-        <header><img src={podcasts[0].imageSource} id={podcastId} alt="Hot air balloons" /></header>
-        <main><h3>{podcasts[0].title}</h3>
-          <h4>Autor: {podcasts[0].autor}</h4><p>Description: {podcasts[0].description}</p></main>
+        <img src={podcasts[0].imageSource} id={podcastId} alt={podcasts[0].title} />
+        <main className="podcast-layout-content"><h3 className="podcast-layout-title">{podcasts[0].title}</h3>
+          <h4 className="podcast-layout-autor">Autor: {podcasts[0].autor}</h4><p className="podcast-layout-description">Description: {podcasts[0].description}</p></main>
       </article></>}
       <Outlet />
     </>);

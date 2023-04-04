@@ -17,20 +17,20 @@ export const PodcastDetail = (): JSX.Element => {
     <>
       <Outlet />
       <div className="episode-container">{isLoading && <LoadingAnimation/>}<div>
-        <h2>Episodes: {episodeCount}</h2>
+        <h2 className="episode-count">Episodes: {episodeCount}</h2>
         <table className="episode-table">
-          <thead>
+          <thead className="episode-table-title">
             <tr>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Duration</th>
+              <th className="episode-table-column">Title</th>
+              <th className="episode-table-column">Date</th>
+              <th className="episode-table-column">Duration</th>
             </tr>
           </thead>
           <tbody>
             {episodes.map((episode) => <tr key={episode.id}>
-              <td><NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink></td>
-              <td>{episode.date}</td>
-              <td>{episode.duration}</td>
+              <td className="episode-table-column"><NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink></td>
+              <td className="episode-table-column">{episode.date}</td>
+              <td className="episode-table-column">{episode.duration}</td>
             </tr>)}
           </tbody>
         </table>
