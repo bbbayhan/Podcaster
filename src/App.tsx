@@ -2,21 +2,22 @@ import './App.scss'
 import React, { useEffect, useState } from 'react'
 import { Podcasts } from './components/podcasts'
 import { usePodcasts } from './hooks/usePodcasts'
-import { useFilter } from './hooks/useFilter'
 import { LoadingAnimation } from './components/LoadingAnimation/loadingAnimation'
+import { useDebounce } from './hooks/useDebounce'
 
 export const App: React.FC = () => {
-  const { filter, setFilter } = useFilter()
+  const [filter, setFilter] = useState('')
+  const debouncedFilter = useDebounce(filter, 2000);
   const [isLoading, setIsLoading] = useState(true);
   const [counter, setCounter] = useState(0)
-  const { mappedPodcasts: podcasts } = usePodcasts({ filter })
+  const { mappedPodcasts: podcasts } = usePodcasts({ debouncedFilter })
 
   useEffect(() => {
     if (podcasts.length > 0){
       setIsLoading(false)
       setCounter(podcasts.length)
     } 
-  }, [podcasts,filter]);
+  }, [podcasts,debouncedFilter]);
 
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

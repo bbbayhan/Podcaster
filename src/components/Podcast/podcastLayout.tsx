@@ -6,7 +6,7 @@ export const PodcastLayout = () => {
   const navigate = useNavigate();
   const { podcastId= "" } = useParams<{ podcastId: string}>();
 
-  const { mappedPodcasts: podcasts } = usePodcasts({filter:podcastId});
+  const { mappedPodcasts: podcasts } = usePodcasts({debouncedFilter:podcastId});
   const hasPodcasts = podcasts?.length > 0
     return (
     <>

@@ -9,16 +9,16 @@ interface Podcast {
   imageSource: string;
 }
 
-export function usePodcasts({ filter }: { filter: string }) {
+export function usePodcasts({ debouncedFilter }: { debouncedFilter: string }) {
   const [mappedPodcasts, setMappedPodcasts] = useState<Podcast[]>([])
 
   useEffect(() => {
     const getPodcasts = async () => {
-      const filteredPodcasts = await getPodcastsFromService({ filter })
+      const filteredPodcasts = await getPodcastsFromService({ debouncedFilter })
       setMappedPodcasts(filteredPodcasts)
     }
     getPodcasts();
-  }, [filter])
+  }, [debouncedFilter])
 
   return { mappedPodcasts }
 }

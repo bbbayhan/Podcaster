@@ -1,11 +1,11 @@
 const oneDayInMilliseconds = 86400000;
 
-export const getPodcastsFromService = async ({ filter }: { filter: string }) => {
+export const getPodcastsFromService = async ({ debouncedFilter }: { debouncedFilter: string }) => {
   const podcastFromLocalStorageString = localStorage.getItem('podcasts');
   const podcastFromLocalStorage = podcastFromLocalStorageString ? JSON.parse(podcastFromLocalStorageString) : null;
 
   if (podcastFromLocalStorage && (new Date().getTime() - new Date(podcastFromLocalStorage.date).getTime()) < oneDayInMilliseconds) {
-    return podcastFromLocalStorage.data.filter((podcast: any) => podcast.title.toLowerCase().includes(filter.toLowerCase()) || podcast.autor.toLowerCase().includes(filter.toLowerCase()) || podcast.id.includes(filter));
+    return podcastFromLocalStorage.data.filter((podcast: any) => podcast.title.toLowerCase().includes(debouncedFilter.toLowerCase()) || podcast.autor.toLowerCase().includes(debouncedFilter.toLowerCase()) || podcast.id.includes(debouncedFilter));
   } else {
 
     return await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')}`)
