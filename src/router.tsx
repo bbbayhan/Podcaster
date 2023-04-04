@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/", 
         element: <Suspense fallback={<div>Loading...</div>}><App /></Suspense>,
       },
       {
