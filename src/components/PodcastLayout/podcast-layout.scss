@@ -11,11 +11,13 @@
     transition: background-color 0.3s ease;
     
     .podcast-layout-content {
+      text-align:left;
       .podcast-layout-title {
-        border-bottom: 1px solid #ccc;
-        font-size: 1.5rem;
+        border-top: 1px solid #ccc;
+        font-size: 1.2rem;
         margin-bottom: 0.5rem;
-        margin-top: 0;
+        margin-top: 1rem;
+        padding-top: 1rem
       }
       
       .podcast-layout-autor {
@@ -23,10 +25,12 @@
         margin-bottom: 1rem;
         margin-top: 0;
         padding-bottom: 1rem;
+        font-style: italic;
       }
       
       .podcast-layout-description {
         margin-top: 0;
+        font-style: italic;
       }
     }
     

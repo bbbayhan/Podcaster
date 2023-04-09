@@ -1,6 +1,6 @@
 import './App.scss'
 import React, { useEffect, useState } from 'react'
-import { Podcasts } from './components/podcasts'
+import { Podcasts } from './components/Podcasts/podcasts'
 import { usePodcasts } from './hooks/usePodcasts'
 import { LoadingAnimation } from './components/LoadingAnimation/loadingAnimation'
 import { useDebounce } from './hooks/useDebounce'
