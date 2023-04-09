@@ -17,7 +17,7 @@ export const PodcastDetail = (): JSX.Element => {
     <>
       <Outlet />
       <div className="episode-container">{isLoading && <LoadingAnimation/>}<div className="episode-list-container">
-        <h2 className="episode-count">Episodes: {episodeCount}</h2>
+        <h2 className="episode-count" data-testid="episode-count" >Episodes: {episodeCount}</h2>
         <table className="episode-table">
           <thead className="episode-table-title">
             <tr>
@@ -27,10 +27,10 @@ export const PodcastDetail = (): JSX.Element => {
             </tr>
           </thead>
           <tbody>
-            {episodes.map((episode) => <tr key={episode.id}>
-              <td className="episode-table-column"><NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink></td>
-              <td className="episode-table-column">{episode.date}</td>
-              <td className="episode-table-column">{episode.duration}</td>
+            {episodes.map((episode) => <tr key={episode.id} data-testid='episode-entry'>
+              <td className="episode-table-column" data-testid={`episode-title-${episode.id}`}><NavLink to={`episode/${episode.id}`} state={{ title: episode.title, description: episode.description, audio: episode.audio }}>{episode.title}</NavLink></td>
+              <td className="episode-table-column" data-testid={`episode-date-${episode.id}`}>{episode.date}</td>
+              <td className="episode-table-column" data-testid={`episode-duration-${episode.id}`}>{episode.duration}</td>
             </tr>)}
           </tbody>
         </table>

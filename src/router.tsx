@@ -4,8 +4,8 @@ import { Layout } from "./components/Layout/Layout";
 
 const App = lazy(() => import('./App'));
 const Episode = lazy(() => import('./components/Episode/episode').then(module => ({ default: module.Episode })));
-const PodcastDetail = lazy(() => import('./components/Podcast/podcastDetail').then(module => ({ default: module.PodcastDetail })));
-const PodcastLayout = lazy(() => import('./components/Podcast/podcastLayout').then(module => ({ default: module.PodcastLayout })));
+const PodcastDetail = lazy(() => import('./components/PodcastDetail/podcastDetail').then(module => ({ default: module.PodcastDetail })));
+const PodcastLayout = lazy(() => import('./components/PodcastLayout/podcastLayout').then(module => ({ default: module.PodcastLayout })));
 
 export const router = createBrowserRouter([
   {

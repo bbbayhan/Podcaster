@@ -3,25 +3,29 @@ import { Episode } from './episode';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 describe('Episode component', () => {
-  test('renders episode title, description, and audio', () => {
-    const episodeState = {
-      title: 'Test Episode',
-      description: 'This is a test',
-      audio: 'test-audio.mp3',
-    };
+  const episodeState = {
+    title: 'Test Episode',
+    description: 'This is a test',
+    audio: 'test-audio.mp3',
+  };
 
+  beforeEach(() => {
     render(
       <MemoryRouter initialEntries={[{ state: episodeState }]}>
         <Routes><Route path="/" element={<Episode />} /></Routes>
       </MemoryRouter>
     );
+  });
 
-    const title = screen.getByText(/Test Episode/i);
+  test('should render episode title', () => {
+    const title = screen.getByTestId('episode-title');
     expect(title).toBeInTheDocument();
-
-    const description = screen.getByText(/This is a test/i);
+  });
+  test('should render episode description', () => {
+    const description = screen.getByTestId('episode-description');
     expect(description).toBeInTheDocument();
-
+  });
+  test('should render audio', () => {
     const audio = screen.getByTestId('audio-element');
     expect(audio).toHaveAttribute('src', 'test-audio.mp3');
   });
