@@ -1,62 +1,62 @@
 .podcast-layout {
-    color: black;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 250px;
-    min-height: fit-content;
-    position: absolute;
-    top: 8rem;
-    left: 12rem;
-    word-wrap: break-word;
-    transition: background-color 0.3s ease;
-    
+  color: black;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 250px;
+  min-height: fit-content;
+  position: absolute;
+  top: 8rem;
+  left: 12rem;
+  word-wrap: break-word;
+  transition: background-color 0.3s ease;
+
+  .podcast-layout-content {
+    text-align: left;
+    .podcast-layout-title {
+      border-top: 1px solid #ccc;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+
+    .podcast-layout-autor {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 1rem;
+      margin-top: 0;
+      padding-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .podcast-layout-description {
+      margin-top: 0;
+      font-style: italic;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #dddddd65;
+  }
+
+  @media screen and (max-width: 1245px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    .podcast-layout-image {
+      width: 50%;
+      margin-right: 0.5rem;
+    }
+
     .podcast-layout-content {
-      text-align:left;
       .podcast-layout-title {
-        border-top: 1px solid #ccc;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        margin-top: 1rem;
-        padding-top: 1rem
-      }
-      
-      .podcast-layout-autor {
-        border-bottom: 1px solid #ccc;
-        margin-bottom: 1rem;
-        margin-top: 0;
-        padding-bottom: 1rem;
-        font-style: italic;
-      }
-      
-      .podcast-layout-description {
-        margin-top: 0;
-        font-style: italic;
-      }
-    }
-    
-    &:hover {
-      cursor: pointer;
-      background-color: #dddddd65;
-    }
-
-    @media screen and (max-width: 1245px) {
-      display:flex;
-      flex-direction: row;
-      justify-content: space-between;
-      position: relative;
-      top:0;
-      .podcast-layout-image{
-        width: 50%;
-        margin-right: 0.5rem;
-      }
-
-      .podcast-layout-content {
-        .podcast-layout-title {
         font-size: 0.9rem;
         margin-bottom: 0.2rem;
         border-bottom: 1px solid #ccc;
       }
-      
+
       .podcast-layout-autor {
         border-bottom: 1px solid #ccc;
         font-size: 0.8rem;
@@ -66,6 +66,6 @@
       .podcast-layout-description {
         display: none;
       }
-    }}
+    }
   }
-  
+}

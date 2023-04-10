@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getPodcastsFromService } from "../services/podcasts";
+import { useEffect, useState } from 'react';
+import { getPodcastsFromService } from '../services/podcasts';
 
 interface Podcast {
   id: string;
@@ -10,15 +10,17 @@ interface Podcast {
 }
 
 export function usePodcasts({ debouncedFilter }: { debouncedFilter: string }) {
-  const [mappedPodcasts, setMappedPodcasts] = useState<Podcast[]>([])
+  const [mappedPodcasts, setMappedPodcasts] = useState<Podcast[]>([]);
 
   useEffect(() => {
     const getPodcasts = async () => {
-      const filteredPodcasts = await getPodcastsFromService({ debouncedFilter })
-      setMappedPodcasts(filteredPodcasts)
-    }
+      const filteredPodcasts = await getPodcastsFromService({
+        debouncedFilter,
+      });
+      setMappedPodcasts(filteredPodcasts);
+    };
     getPodcasts();
-  }, [debouncedFilter])
+  }, [debouncedFilter]);
 
-  return { mappedPodcasts }
+  return { mappedPodcasts };
 }

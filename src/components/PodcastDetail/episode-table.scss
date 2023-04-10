@@ -7,7 +7,7 @@
     margin-left: 24rem;
     color: black;
 
-    .episode-count{
+    .episode-count {
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       text-align: left;
       padding: 1rem;
@@ -21,30 +21,30 @@
       font-size: 0.6rem;
       margin-left: 9.5rem;
     }
-   }
+  }
 }
 
-.episode-table{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-collapse: collapse;
-    width: 100%;
-  
-    .episode-table-column {
-      padding: 8px;
-      text-align: left;
-      vertical-align: initial;
-    }
-  
-    .episode-table-title{
-      background-color: #fff;
-      border-bottom: 1px solid #ccc;
-    }
-  
-    tr:nth-child(odd) {
-      background-color: #f2f2f2;
-    }
-  
-    &:not(:last-child) {
-      border-bottom: 1px solid #ccc;
-    }
+.episode-table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-collapse: collapse;
+  width: 100%;
+
+  .episode-table-column {
+    padding: 8px;
+    text-align: left;
+    vertical-align: initial;
   }
+
+  .episode-table-title {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+}

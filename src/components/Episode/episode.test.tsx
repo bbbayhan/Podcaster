@@ -12,8 +12,10 @@ describe('Episode component', () => {
   beforeEach(() => {
     render(
       <MemoryRouter initialEntries={[{ state: episodeState }]}>
-        <Routes><Route path="/" element={<Episode />} /></Routes>
-      </MemoryRouter>
+        <Routes>
+          <Route path="/" element={<Episode />} />
+        </Routes>
+      </MemoryRouter>,
     );
   });
 

@@ -6,7 +6,9 @@ import { usePodcastDetail } from '../../hooks/usePodcastDetail';
 vi.mock('react-router-dom', () => ({
   useParams: vi.fn(() => ({ podcastId: '1234' })),
   NavLink: ({ children }: { children: React.ReactNode }) => <a>{children}</a>,
-  Outlet: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  Outlet: ({ children }: { children: React.ReactNode }) => (
+    <div>{children}</div>
+  ),
 }));
 
 vi.mock('../../hooks/usePodcastDetail', () => ({
@@ -34,9 +36,8 @@ vi.mock('../../hooks/usePodcastDetail', () => ({
 }));
 
 describe('PodcastDetail', () => {
-
   beforeEach(() => {
-    render(<PodcastDetail />)
+    render(<PodcastDetail />);
   });
 
   it('should render the correct episode count', () => {
@@ -44,20 +45,20 @@ describe('PodcastDetail', () => {
   });
 
   it('should render the episode title', () => {
-    const titleElement = screen.getByTestId('episode-title-123')
+    const titleElement = screen.getByTestId('episode-title-123');
 
-    expect(titleElement).toBeInTheDocument()
-  })
+    expect(titleElement).toBeInTheDocument();
+  });
 
   it('should render the episode released date', () => {
-    const releasedDateElement = screen.getByTestId('episode-date-123')
+    const releasedDateElement = screen.getByTestId('episode-date-123');
 
-    expect(releasedDateElement).toBeInTheDocument()
+    expect(releasedDateElement).toBeInTheDocument();
   });
 
   it('should render the episode duration', () => {
-    const durationElement = screen.getByTestId('episode-duration-123')
+    const durationElement = screen.getByTestId('episode-duration-123');
 
-    expect(durationElement).toBeInTheDocument()
+    expect(durationElement).toBeInTheDocument();
   });
 });

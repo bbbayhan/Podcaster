@@ -1,19 +1,19 @@
-.episode{
+.episode {
   margin-left: 24rem;
   color: black;
-  .episode-article{
+  .episode-article {
     padding: 1rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
 
-  .episode-content{
-    .episode-title{
+  .episode-content {
+    .episode-title {
       padding: 0.8rem;
     }
-    .episode-description{
+    .episode-description {
       padding: 0.5rem;
     }
-    .episode-audio{
+    .episode-audio {
       width: 100%;
     }
   }
@@ -26,5 +26,5 @@
       color: black;
       font-size: 0.6rem;
     }
-   }
+  }
 }
