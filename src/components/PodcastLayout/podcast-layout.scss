@@ -11,6 +11,7 @@
   transition: background-color 0.3s ease;
 
   .podcast-layout-content {
+    width: 100%;
     text-align: left;
     .podcast-layout-title {
       border-top: 1px solid #ccc;
@@ -45,8 +46,10 @@
     justify-content: space-between;
     position: relative;
     top: 0;
+    width: 44%;
     .podcast-layout-image {
       width: 50%;
+      height: 50%;
       margin-right: 0.5rem;
     }
 
