@@ -7,12 +7,12 @@ export const PodcastLayout = () => {
   const { podcastId = '' } = useParams<{ podcastId: string }>();
 
   const { mappedPodcasts: podcasts } = usePodcasts({
-    debouncedFilter: podcastId,
+    debouncedFilter: podcastId
   });
-  const hasPodcasts = podcasts?.length > 0;
+  const podcast = podcasts?.[0];
   return (
     <>
-      {hasPodcasts && (
+      {podcast && (
         <>
           <article
             data-testid="podcast-layout-card"
@@ -22,29 +22,29 @@ export const PodcastLayout = () => {
             <img
               className="podcast-layout-image"
               data-testid="podcast-layout-image"
-              src={podcasts[0].imageSource}
+              src={podcast.imageSource}
               id={podcastId}
-              alt={podcasts[0].title}
+              alt={podcast.title}
             />
             <main className="podcast-layout-content">
               <h3
                 className="podcast-layout-title"
                 data-testid={`podcast-layout-title-${podcastId}`}
               >
-                {podcasts[0].title}
+                {podcast.title}
               </h3>
               <p
                 className="podcast-layout-autor"
                 data-testid={`podcast-layout-autor-${podcastId}`}
               >
-                by {podcasts[0].autor}
+                by {podcast.autor}
               </p>
-              <b>Description:</b>
+              <b className="podcast-layout-description">Description:</b>
               <p
                 className="podcast-layout-description"
                 data-testid={`podcast-layout-description-${podcastId}`}
               >
-                {podcasts[0].description}
+                {podcast.description}
               </p>
             </main>
           </article>

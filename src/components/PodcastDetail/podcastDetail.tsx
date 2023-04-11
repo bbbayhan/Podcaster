@@ -5,7 +5,7 @@ import { LoadingAnimation } from '../LoadingAnimation/loadingAnimation';
 import './episode-table.scss';
 
 export const PodcastDetail = (): JSX.Element => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const { podcastId = '' } = useParams<{ podcastId: string }>();
   const { episodeCount, episodes } = usePodcastDetail({ podcastId });
 
@@ -37,14 +37,7 @@ export const PodcastDetail = (): JSX.Element => {
                     className="episode-table-column"
                     data-testid={`episode-title-${episode.id}`}
                   >
-                    <NavLink
-                      to={`episode/${episode.id}`}
-                      state={{
-                        title: episode.title,
-                        description: episode.description,
-                        audio: episode.audio,
-                      }}
-                    >
+                    <NavLink to={`episode/${episode.id}`}>
                       {episode.title}
                     </NavLink>
                   </td>

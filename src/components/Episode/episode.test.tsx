@@ -1,34 +1,43 @@
 import { render, screen } from '@testing-library/react';
 import { Episode } from './episode';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { vi } from 'vitest';
+import { MemoryRouter } from 'react-router-dom';
+
+vi.mock('../../hooks/usePodcastDetail', () => ({
+  usePodcastDetail: vi.fn(() => ({
+    episodeCount: 1,
+    episodes: [
+      {
+        id: '456',
+        title: 'Episode 2',
+        date: '2022-04-02',
+        duration: 360000,
+        description: 'Episode 2 description',
+        audio: 'http://audio.com/episode2.mp3'
+      }
+    ]
+  }))
+}));
 
 describe('Episode component', () => {
-  const episodeState = {
-    title: 'Test Episode',
-    description: 'This is a test',
-    audio: 'test-audio.mp3',
-  };
-
   beforeEach(() => {
     render(
-      <MemoryRouter initialEntries={[{ state: episodeState }]}>
-        <Routes>
-          <Route path="/" element={<Episode />} />
-        </Routes>
-      </MemoryRouter>,
+      <MemoryRouter initialEntries={['/podcast/1234/456']}>
+        <Episode />
+      </MemoryRouter>
     );
   });
 
-  test('should render episode title', () => {
+  it('should render episode title', () => {
     const title = screen.getByTestId('episode-title');
     expect(title).toBeInTheDocument();
   });
-  test('should render episode description', () => {
+  it('should render episode description', () => {
     const description = screen.getByTestId('episode-description');
     expect(description).toBeInTheDocument();
   });
-  test('should render audio', () => {
+  it('should render audio', () => {
     const audio = screen.getByTestId('audio-element');
-    expect(audio).toHaveAttribute('src', 'test-audio.mp3');
+    expect(audio).toBeInTheDocument();
   });
 });

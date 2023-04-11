@@ -12,7 +12,7 @@ interface Episode {
 
 export function usePodcastDetail({ podcastId }: { podcastId: string }) {
   const [episodes, setMappedEpisodes] = useState<Episode[]>([]);
-  const [episodeCount, setEpisodeCount] = useState(0);
+  const [episodeCount, setEpisodeCount] = useState<number>(0);
 
   useEffect(() => {
     const getPodcastDetails = async () => {

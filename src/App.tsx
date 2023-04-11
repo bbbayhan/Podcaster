@@ -6,10 +6,10 @@ import { LoadingAnimation } from './components/LoadingAnimation/loadingAnimation
 import { useDebounce } from './hooks/useDebounce';
 
 export const App: React.FC = () => {
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState<string>('');
   const debouncedFilter = useDebounce(filter, 500);
-  const [isLoading, setIsLoading] = useState(true);
-  const [counter, setCounter] = useState(0);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [counter, setCounter] = useState<number>(0);
   const { mappedPodcasts: podcasts } = usePodcasts({ debouncedFilter });
 
   useEffect(() => {

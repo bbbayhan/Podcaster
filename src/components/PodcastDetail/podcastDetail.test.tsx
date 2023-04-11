@@ -1,14 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { PodcastDetail } from './podcastDetail';
 import { vi } from 'vitest';
-import { usePodcastDetail } from '../../hooks/usePodcastDetail';
 
 vi.mock('react-router-dom', () => ({
   useParams: vi.fn(() => ({ podcastId: '1234' })),
   NavLink: ({ children }: { children: React.ReactNode }) => <a>{children}</a>,
-  Outlet: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
+  Outlet: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
 }));
 
 vi.mock('../../hooks/usePodcastDetail', () => ({
@@ -21,7 +18,7 @@ vi.mock('../../hooks/usePodcastDetail', () => ({
         date: '2022-04-01',
         duration: 300000,
         description: 'Episode 1 description',
-        audio: 'http://audio.com/episode1.mp3',
+        audio: 'http://audio.com/episode1.mp3'
       },
       {
         id: '456',
@@ -29,10 +26,10 @@ vi.mock('../../hooks/usePodcastDetail', () => ({
         date: '2022-04-02',
         duration: 360000,
         description: 'Episode 2 description',
-        audio: 'http://audio.com/episode2.mp3',
-      },
-    ],
-  })),
+        audio: 'http://audio.com/episode2.mp3'
+      }
+    ]
+  }))
 }));
 
 describe('PodcastDetail', () => {
