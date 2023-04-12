@@ -26,3 +26,30 @@ export const podcastListJSONFixture = [
         description: 'Description 1',
     },
 ]
+
+export const podcastDetailFixture = {
+    resultCount: 1,
+    results:
+        [
+            {
+                trackId: 'track1',
+                trackName: 'trackname',
+                releaseDate: '01/02/2023',
+                trackTimeMillis: '78738',
+                description: 'trackDescription',
+                url: 'track@track.com'
+            },
+
+        ],
+}
+
+export const podcastDetailJSONFixture = [
+    {
+        id: '1',
+        title: 'Podcast 1',
+        date: '01/02/2024',
+        duration: '65456',
+        description: 'Description 1',
+        audio: 'audio1',
+    },
+]

@@ -5,10 +5,12 @@ This application has been developed for listening to music podcasts. The applica
 The application architecture is represented in the following format:
 
 1. Components - User interface components that are utilized for the three views of the application.
-2. Fixtures - Fixtures used to build the views before establishing API connections.
-3. Hooks - Debounce hook for API calls, Podcast and PodcastDetail hooks where the data is fetched using the services.
-4. Services - The classes responsible for making fetch calls to the APIs.
-5. Utils - Helpers to format date and minutes.
+2. Domain - Core of the application where it is defined the business entities and service contracts.
+3. Fixtures - Fixtures used to build the views before establishing API connections.
+4. Hooks - Debounce hook for API calls, Podcast and PodcastDetail hooks where the data is fetched using the services.
+5. Infrastructure - Responsible for implementing the service and storage contracts defined in the domain layer.
+6. Services - The classes responsible for making fetch calls to the APIs.
+7. Utils - Helpers to format date and minutes.
 
 ### Prerequisites
 

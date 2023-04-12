@@ -9,7 +9,7 @@ import { PodcastDTO } from '../infrastructure/podcast.dto';
 const MockHttpService = mock<HTTPService<Podcast>>()
 const MockStorageService = mock<StorageService<Podcast>>()
 
-describe('getPodcastsFromService', () => {
+describe('PodcastListService', () => {
   let storage: StorageService<Podcast>;
   let http: HTTPService<Podcast>;
 
