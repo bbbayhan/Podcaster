@@ -36,6 +36,7 @@ In order to maintain the project's quality, the following libraries are utilized
 - `eslint`: The config that helps catch common coding errors and style issues.
 - `prettier`: The config is default and integrated with eslint and helps enforce consistent code style.
 - `sass`: This is a CSS preprocessor that extends the capabilities of CSS.
+- `ts-mockito`: Used for infrastructure and services tests.
 
 ### Features
 
@@ -47,3 +48,8 @@ In order to maintain the project's quality, the following libraries are utilized
 - A simple message is displayed when no podcasts are found.
 - Responsive design principles have been employed.
 - It is employed Vitest and Testing Library to write unit tests to verify the UI elements. In addition, integration tests have been performed for hooks and services.
+
+### To-do list
+
+- Improve performance when loading data.
+- Create Value-Objects for Podcast and Podcast Detail entities.

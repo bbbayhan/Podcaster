@@ -1,24 +1,16 @@
 import { useEffect, useState } from 'react';
-import { getPodcastDetailFromService } from '../services/podcastDetails';
-
-interface Episode {
-  id: string;
-  title: string;
-  date: string;
-  duration: number;
-  description: string;
-  audio: string;
-}
+import { PodcastDetailService } from '../services/podcast-detail.service';
+import { PodcastDetail } from '../domain/podcastDetail';
 
 export function usePodcastDetail({ podcastId }: { podcastId: string }) {
-  const [episodes, setMappedEpisodes] = useState<Episode[]>([]);
+  const [episodes, setMappedEpisodes] = useState<PodcastDetail[]>([]);
   const [episodeCount, setEpisodeCount] = useState<number>(0);
 
   useEffect(() => {
     const getPodcastDetails = async () => {
-      const episodes = await getPodcastDetailFromService({ podcastId });
+      const episodes = await PodcastDetailService(podcastId);
       setEpisodeCount(episodes.resultCount);
-      setMappedEpisodes(episodes.mappedPodcastDetails);
+      setMappedEpisodes(episodes.podcastDetails);
     };
     getPodcastDetails();
   }, [podcastId]);

@@ -2,7 +2,7 @@ import { HTTPService } from '../domain/httpService';
 import { StorageService } from '../domain/storageService';
 import { PodcastListHttpService } from '../infrastructure/podcast-list.http';
 import { PodcastListStorageService } from '../infrastructure/podcast-list.storage';
-import { Podcast } from './interfaces';
+import { Podcast } from '../domain/podcast';
 
 export const PodcastListService = async (
   storage: StorageService<Podcast> = new PodcastListStorageService(),
