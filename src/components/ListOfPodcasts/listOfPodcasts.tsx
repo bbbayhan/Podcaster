@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import { Podcast } from '../../services/interfaces';
+import { Podcast } from '../../domain/podcast';
 import './style.scss';
 
 export const ListOfPodcasts = ({
-  podcasts,
+  podcasts
 }: {
   podcasts: Podcast[];
 }): JSX.Element => {
