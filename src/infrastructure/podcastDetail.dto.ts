@@ -1,4 +1,4 @@
-import { PodcastDetail } from '../domain/podcastDetail';
+import { PodcastDetail } from '../domain/entities/PodcastDetail/podcastDetail';
 import { formatNumberToMinutes, formatStringToDate } from '../utils/formatHelpers';
 
 export class PodcastDetailDTO {
@@ -9,7 +9,7 @@ export class PodcastDetailDTO {
             formatStringToDate(json.releaseDate),
             formatNumberToMinutes(json.trackTimeMillis),
             json.description,
-            json.jsonUrl
+            json.episodeUrl
         );
     }
 

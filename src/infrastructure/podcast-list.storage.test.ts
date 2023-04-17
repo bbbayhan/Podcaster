@@ -1,5 +1,5 @@
 import { vi } from "vitest";
-import { Podcast } from "../domain/podcast";
+import { Podcast } from "../domain/entities/Podcast/podcast";
 import { podcastListJSONFixture } from './fixtures';
 import { PodcastListStorageService } from "./podcast-list.storage";
 import { StorageService } from "../domain/storageService";

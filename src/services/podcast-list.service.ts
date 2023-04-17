@@ -1,18 +1,19 @@
 import { HTTPService } from '../domain/httpService';
 import { StorageService } from '../domain/storageService';
-import { PodcastListHttpService } from '../infrastructure/podcast-list.http';
+import { Podcast } from '../domain/entities/Podcast/podcast';
 import { PodcastListStorageService } from '../infrastructure/podcast-list.storage';
-import { Podcast } from '../domain/podcast';
+import { PodcastHttpService } from '../infrastructure/podcast-list.http';
+import { PodcastDetail } from '../domain/entities/PodcastDetail/podcastDetail';
 
 export const PodcastListService = async (
-  storage: StorageService<Podcast> = new PodcastListStorageService(),
-  http: HTTPService<Podcast> = new PodcastListHttpService()
+  storage: StorageService<Podcast | { podcastDetails: PodcastDetail[], resultCount: number }> = new PodcastListStorageService(),
+  http: HTTPService<Podcast | { podcastDetails: PodcastDetail[], resultCount: number }> = new PodcastHttpService()
 ) => {
   try {
-    const podcasts: Podcast[] = await storage.get();
+    const podcasts: (Podcast | { podcastDetails: PodcastDetail[], resultCount: number })[] = await storage.get();
     return podcasts;
   } catch (e) {
-    const podcasts: Podcast[] = await http.get();
+    const podcasts: (Podcast | { podcastDetails: PodcastDetail[], resultCount: number })[] = await http.get();
     await storage.set(podcasts);
     return podcasts;
   }

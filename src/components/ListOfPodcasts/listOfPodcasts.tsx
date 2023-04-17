@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Podcast } from '../../domain/podcast';
+import { Podcast } from '../../domain/entities/Podcast/podcast';
 import './style.scss';
 
 export const ListOfPodcasts = ({

@@ -1,4 +1,4 @@
-import { Podcast } from '../domain/podcast';
+import { Podcast } from '../domain/entities/Podcast/podcast';
 
 export class PodcastDTO {
     static fromHttp(json: any): Podcast {

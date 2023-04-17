@@ -1,8 +1,9 @@
 import { vi } from "vitest";
 import { podcastListFixture } from './fixtures'
-import { PodcastListHttpService } from "./podcast-list.http";
+import { PodcastHttpService } from "./podcast-list.http";
 import { HTTPService } from "../domain/httpService";
-import { Podcast } from "../domain/podcast";
+import { Podcast } from "../domain/entities/Podcast/podcast";
+import { PodcastDetail } from "../domain/entities/PodcastDetail/podcastDetail";
 
 describe('PodcastListHttp', () => {
     const mockResponse = {
@@ -11,10 +12,10 @@ describe('PodcastListHttp', () => {
     };
     global.fetch = vi.fn().mockResolvedValue(mockResponse);
 
-    let sut: HTTPService<Podcast>;
+    let sut: HTTPService<Podcast | { podcastDetails: PodcastDetail[], resultCount: number }>;
 
     beforeEach(() => {
-        sut = new PodcastListHttpService()
+        sut = new PodcastHttpService()
     })
 
     it('should be called with the correct url', async () => {

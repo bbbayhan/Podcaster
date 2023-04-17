@@ -18,6 +18,7 @@ export const Episode = (): JSX.Element => {
   const [selectedEpisode, setSelectedEpisode] = useState<EpisodeType | null>(
     null
   );
+  console.log(selectedEpisode);
   const { episodes } = usePodcastDetail({ podcastId });
 
   useEffect(() => {

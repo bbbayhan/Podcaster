@@ -1,7 +1,7 @@
 import { StorageService } from '../domain/storageService';
 import { HTTPService } from '../domain/httpService';
 import { PodcastListService } from './podcast-list.service';
-import { Podcast } from '../domain/podcast';
+import { Podcast } from '../domain/entities/Podcast/podcast';
 import { podcastListJSONFixture } from '../infrastructure/fixtures';
 import { mock, instance, reset, verify, when, anyString, anything } from 'ts-mockito';
 import { PodcastDTO } from '../infrastructure/podcast.dto';
